@@ -25,6 +25,8 @@
 		85C712412BF6A521004353CB /* SimpleNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 85C712402BF6A521004353CB /* SimpleNetworking */; };
 		85C712462BF6A71C004353CB /* FiraGO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85C712452BF6A71C004353CB /* FiraGO-Bold.ttf */; };
 		85C712482BF6A730004353CB /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85C712472BF6A730004353CB /* FiraGO-Regular.ttf */; };
+		85C7124B2BF6BF1E004353CB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 85C7124A2BF6BF1E004353CB /* SDWebImage */; };
+		85C7124D2BF6BF1E004353CB /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 85C7124C2BF6BF1E004353CB /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C7124B2BF6BF1E004353CB /* SDWebImage in Frameworks */,
+				85C7124D2BF6BF1E004353CB /* SDWebImageMapKit in Frameworks */,
 				85C712412BF6A521004353CB /* SimpleNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +204,8 @@
 			name = Collaboration1;
 			packageProductDependencies = (
 				85C712402BF6A521004353CB /* SimpleNetworking */,
+				85C7124A2BF6BF1E004353CB /* SDWebImage */,
+				85C7124C2BF6BF1E004353CB /* SDWebImageMapKit */,
 			);
 			productName = Collaboration1;
 			productReference = 85C712082BF6A067004353CB /* Collaboration1.app */;
@@ -231,6 +237,7 @@
 			mainGroup = 85C711FF2BF6A067004353CB;
 			packageReferences = (
 				85C7123F2BF6A521004353CB /* XCRemoteSwiftPackageReference "SimpleNetworking" */,
+				85C712492BF6BF1E004353CB /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 85C712092BF6A067004353CB /* Products */;
 			projectDirPath = "";
@@ -495,6 +502,14 @@
 				kind = branch;
 			};
 		};
+		85C712492BF6BF1E004353CB /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -502,6 +517,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 85C7123F2BF6A521004353CB /* XCRemoteSwiftPackageReference "SimpleNetworking" */;
 			productName = SimpleNetworking;
+		};
+		85C7124A2BF6BF1E004353CB /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85C712492BF6BF1E004353CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		85C7124C2BF6BF1E004353CB /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85C712492BF6BF1E004353CB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
