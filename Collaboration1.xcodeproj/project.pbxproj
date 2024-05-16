@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120B2BF6A067004353CB /* AppDelegate.swift */; };
+		85C7120E2BF6A067004353CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120D2BF6A067004353CB /* SceneDelegate.swift */; };
+		85C712152BF6A069004353CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C712142BF6A069004353CB /* Assets.xcassets */; };
+		85C712182BF6A069004353CB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 85C712172BF6A069004353CB /* Base */; };
+		85C712262BF6A185004353CB /* AirQualityPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712252BF6A185004353CB /* AirQualityPageVC.swift */; };
+		85C712282BF6A198004353CB /* AirQualityPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712272BF6A198004353CB /* AirQualityPageVM.swift */; };
+		85C7122B2BF6A1D6004353CB /* WeatherPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */; };
+		85C7122D2BF6A1E0004353CB /* WeatherPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */; };
+		85C712302BF6A206004353CB /* SpeciePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7122F2BF6A206004353CB /* SpeciePageVC.swift */; };
+		85C712322BF6A216004353CB /* SpeciePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712312BF6A216004353CB /* SpeciePageVM.swift */; };
+		85C712352BF6A232004353CB /* SolarResourcePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712342BF6A232004353CB /* SolarResourcePageVM.swift */; };
+		85C712372BF6A248004353CB /* SolarResourcePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712362BF6A248004353CB /* SolarResourcePageVC.swift */; };
+		85C7123A2BF6A268004353CB /* PopulationPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C712392BF6A268004353CB /* PopulationPageVC.swift */; };
+		85C7123C2BF6A275004353CB /* PopulationPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7123B2BF6A275004353CB /* PopulationPageVM.swift */; };
+		85C7123E2BF6A4E2004353CB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7123D2BF6A4E2004353CB /* UIColor.swift */; };
+		85C712412BF6A521004353CB /* SimpleNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 85C712402BF6A521004353CB /* SimpleNetworking */; };
+		85C712462BF6A71C004353CB /* FiraGO-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85C712452BF6A71C004353CB /* FiraGO-Bold.ttf */; };
+		85C712482BF6A730004353CB /* FiraGO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85C712472BF6A730004353CB /* FiraGO-Regular.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		85C712082BF6A067004353CB /* Collaboration1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collaboration1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C7120B2BF6A067004353CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85C7120D2BF6A067004353CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		85C712142BF6A069004353CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85C712172BF6A069004353CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85C712192BF6A069004353CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C712252BF6A185004353CB /* AirQualityPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageVC.swift; sourceTree = "<group>"; };
+		85C712272BF6A198004353CB /* AirQualityPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageVM.swift; sourceTree = "<group>"; };
+		85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageVC.swift; sourceTree = "<group>"; };
+		85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPageVM.swift; sourceTree = "<group>"; };
+		85C7122F2BF6A206004353CB /* SpeciePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePageVC.swift; sourceTree = "<group>"; };
+		85C712312BF6A216004353CB /* SpeciePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePageVM.swift; sourceTree = "<group>"; };
+		85C712342BF6A232004353CB /* SolarResourcePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcePageVM.swift; sourceTree = "<group>"; };
+		85C712362BF6A248004353CB /* SolarResourcePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarResourcePageVC.swift; sourceTree = "<group>"; };
+		85C712392BF6A268004353CB /* PopulationPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageVC.swift; sourceTree = "<group>"; };
+		85C7123B2BF6A275004353CB /* PopulationPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageVM.swift; sourceTree = "<group>"; };
+		85C7123D2BF6A4E2004353CB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		85C712452BF6A71C004353CB /* FiraGO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Bold.ttf"; sourceTree = "<group>"; };
+		85C712472BF6A730004353CB /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85C712052BF6A067004353CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C712412BF6A521004353CB /* SimpleNetworking in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85C711FF2BF6A067004353CB = {
+			isa = PBXGroup;
+			children = (
+				85C7120A2BF6A067004353CB /* Collaboration1 */,
+				85C712092BF6A067004353CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85C712092BF6A067004353CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85C712082BF6A067004353CB /* Collaboration1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85C7120A2BF6A067004353CB /* Collaboration1 */ = {
+			isa = PBXGroup;
+			children = (
+				85C712232BF6A125004353CB /* Application */,
+				85C712222BF6A121004353CB /* Resources */,
+				85C712202BF6A116004353CB /* Extensions */,
+				85C712422BF6A55A004353CB /* Models */,
+				85C7121F2BF6A0B2004353CB /* Scenes */,
+			);
+			path = Collaboration1;
+			sourceTree = "<group>";
+		};
+		85C7121F2BF6A0B2004353CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				85C712382BF6A250004353CB /* PopulationPage */,
+				85C712332BF6A21A004353CB /* Solar Resource Page */,
+				85C7122E2BF6A1F2004353CB /* SpeciePage */,
+				85C712292BF6A1AB004353CB /* WeatherPage */,
+				85C712242BF6A13F004353CB /* AirQualityPage */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		85C712202BF6A116004353CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85C7123D2BF6A4E2004353CB /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		85C712222BF6A121004353CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85C712142BF6A069004353CB /* Assets.xcassets */,
+				85C712162BF6A069004353CB /* LaunchScreen.storyboard */,
+				85C712192BF6A069004353CB /* Info.plist */,
+				85C712452BF6A71C004353CB /* FiraGO-Bold.ttf */,
+				85C712472BF6A730004353CB /* FiraGO-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		85C712232BF6A125004353CB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				85C7120B2BF6A067004353CB /* AppDelegate.swift */,
+				85C7120D2BF6A067004353CB /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		85C712242BF6A13F004353CB /* AirQualityPage */ = {
+			isa = PBXGroup;
+			children = (
+				85C712252BF6A185004353CB /* AirQualityPageVC.swift */,
+				85C712272BF6A198004353CB /* AirQualityPageVM.swift */,
+			);
+			path = AirQualityPage;
+			sourceTree = "<group>";
+		};
+		85C712292BF6A1AB004353CB /* WeatherPage */ = {
+			isa = PBXGroup;
+			children = (
+				85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */,
+				85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */,
+			);
+			path = WeatherPage;
+			sourceTree = "<group>";
+		};
+		85C7122E2BF6A1F2004353CB /* SpeciePage */ = {
+			isa = PBXGroup;
+			children = (
+				85C7122F2BF6A206004353CB /* SpeciePageVC.swift */,
+				85C712312BF6A216004353CB /* SpeciePageVM.swift */,
+			);
+			path = SpeciePage;
+			sourceTree = "<group>";
+		};
+		85C712332BF6A21A004353CB /* Solar Resource Page */ = {
+			isa = PBXGroup;
+			children = (
+				85C712342BF6A232004353CB /* SolarResourcePageVM.swift */,
+				85C712362BF6A248004353CB /* SolarResourcePageVC.swift */,
+			);
+			path = "Solar Resource Page";
+			sourceTree = "<group>";
+		};
+		85C712382BF6A250004353CB /* PopulationPage */ = {
+			isa = PBXGroup;
+			children = (
+				85C712392BF6A268004353CB /* PopulationPageVC.swift */,
+				85C7123B2BF6A275004353CB /* PopulationPageVM.swift */,
+			);
+			path = PopulationPage;
+			sourceTree = "<group>";
+		};
+		85C712422BF6A55A004353CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85C712072BF6A067004353CB /* Collaboration1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C7121C2BF6A069004353CB /* Build configuration list for PBXNativeTarget "Collaboration1" */;
+			buildPhases = (
+				85C712042BF6A067004353CB /* Sources */,
+				85C712052BF6A067004353CB /* Frameworks */,
+				85C712062BF6A067004353CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Collaboration1;
+			packageProductDependencies = (
+				85C712402BF6A521004353CB /* SimpleNetworking */,
+			);
+			productName = Collaboration1;
+			productReference = 85C712082BF6A067004353CB /* Collaboration1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85C712002BF6A067004353CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					85C712072BF6A067004353CB = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 85C712032BF6A067004353CB /* Build configuration list for PBXProject "Collaboration1" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85C711FF2BF6A067004353CB;
+			packageReferences = (
+				85C7123F2BF6A521004353CB /* XCRemoteSwiftPackageReference "SimpleNetworking" */,
+			);
+			productRefGroup = 85C712092BF6A067004353CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85C712072BF6A067004353CB /* Collaboration1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85C712062BF6A067004353CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C712462BF6A71C004353CB /* FiraGO-Bold.ttf in Resources */,
+				85C712482BF6A730004353CB /* FiraGO-Regular.ttf in Resources */,
+				85C712152BF6A069004353CB /* Assets.xcassets in Resources */,
+				85C712182BF6A069004353CB /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85C712042BF6A067004353CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C712262BF6A185004353CB /* AirQualityPageVC.swift in Sources */,
+				85C712352BF6A232004353CB /* SolarResourcePageVM.swift in Sources */,
+				85C7123C2BF6A275004353CB /* PopulationPageVM.swift in Sources */,
+				85C7122B2BF6A1D6004353CB /* WeatherPageVC.swift in Sources */,
+				85C7122D2BF6A1E0004353CB /* WeatherPageVM.swift in Sources */,
+				85C712322BF6A216004353CB /* SpeciePageVM.swift in Sources */,
+				85C712372BF6A248004353CB /* SolarResourcePageVC.swift in Sources */,
+				85C712302BF6A206004353CB /* SpeciePageVC.swift in Sources */,
+				85C712282BF6A198004353CB /* AirQualityPageVM.swift in Sources */,
+				85C7123E2BF6A4E2004353CB /* UIColor.swift in Sources */,
+				85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */,
+				85C7123A2BF6A268004353CB /* PopulationPageVC.swift in Sources */,
+				85C7120E2BF6A067004353CB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		85C712162BF6A069004353CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85C712172BF6A069004353CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85C7121A2BF6A069004353CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85C7121B2BF6A069004353CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85C7121D2BF6A069004353CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9S26B8AV5C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Collaboration1/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yvelazeMagariKompania.ge.Collaboration1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85C7121E2BF6A069004353CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9S26B8AV5C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Collaboration1/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yvelazeMagariKompania.ge.Collaboration1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85C712032BF6A067004353CB /* Build configuration list for PBXProject "Collaboration1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C7121A2BF6A069004353CB /* Debug */,
+				85C7121B2BF6A069004353CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85C7121C2BF6A069004353CB /* Build configuration list for PBXNativeTarget "Collaboration1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C7121D2BF6A069004353CB /* Debug */,
+				85C7121E2BF6A069004353CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85C7123F2BF6A521004353CB /* XCRemoteSwiftPackageReference "SimpleNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GujMeister/SimpleNetworking";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85C712402BF6A521004353CB /* SimpleNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85C7123F2BF6A521004353CB /* XCRemoteSwiftPackageReference "SimpleNetworking" */;
+			productName = SimpleNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 85C712002BF6A067004353CB /* Project object */;
+}
