@@ -67,7 +67,7 @@ final class CountryCollectionViewCell: UICollectionViewCell {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
             
