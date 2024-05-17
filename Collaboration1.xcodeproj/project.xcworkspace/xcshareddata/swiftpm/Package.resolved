@@ -1,0 +1,24 @@
+{
+  "originHash" : "0ed1607d1fcd61193ff5c8792777b132a8b960c80fd78757b61baa6cf213fa73",
+  "pins" : [
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "5642d1ffe3dbe628592443bd14154e31929727b4",
+        "version" : "5.19.2"
+      }
+    },
+    {
+      "identity" : "simplenetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GujMeister/SimpleNetworking",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9be186ad616726caedd6d1c273f3e1382d8810ec"
+      }
+    }
+  ],
+  "version" : 3
+}
