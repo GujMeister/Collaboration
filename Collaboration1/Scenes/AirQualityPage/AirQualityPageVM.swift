@@ -20,6 +20,13 @@ class AirQualityViewModel {
     weak var delegate: AirQualityViewModelDelegate?
     private let webService = WebService()
     
+    var countries: [String]?
+    var states: [String]?
+    var cities: [String]?
+    var selectedCountry: String?
+    var selectedState: String?
+    var selectedCity: String?
+    
     func fetchCountries(apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/countries?key=\(apiKey)"
         

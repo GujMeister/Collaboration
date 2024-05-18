@@ -26,21 +26,21 @@ extension AirQualityPageVC: AirQualityViewModelDelegate {
     
     func didFetchCountries(_ viewModel: AirQualityViewModel, countries: [String]) {
         DispatchQueue.main.async {
-            self.countries = countries
+            viewModel.countries = countries
             self.countryPickerView.reloadAllComponents()
         }
     }
     
     func didFetchStates(_ viewModel: AirQualityViewModel, states: [String]) {
         DispatchQueue.main.async {
-            self.states = states
+            viewModel.states = states
             self.statePickerView.reloadAllComponents()
         }
     }
     
     func didFetchCities(_ viewModel: AirQualityViewModel, cities: [String]) {
         DispatchQueue.main.async {
-            self.cities = cities
+            viewModel.cities = cities
             self.cityPickerView.reloadAllComponents()
         }
     }
@@ -56,11 +56,11 @@ extension AirQualityPageVC: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return countries?.count ?? 0
+            return viewModel.countries?.count ?? 0
         case 2:
-            return states?.count ?? 0
+            return viewModel.states?.count ?? 0
         case 3:
-            return cities?.count ?? 0
+            return viewModel.cities?.count ?? 0
         default:
             return 0
         }
@@ -73,11 +73,11 @@ extension AirQualityPageVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return countries?[row]
+            return viewModel.countries?[row]
         case 2:
-            return states?[row]
+            return viewModel.states?[row]
         case 3:
-            return cities?[row]
+            return viewModel.cities?[row]
         default:
             return nil
         }
@@ -86,23 +86,23 @@ extension AirQualityPageVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            selectedCountry = countries?[row]
-            countryTextField.text = selectedCountry
+            viewModel.selectedCountry = viewModel.countries?[row]
+            countryTextField.text = viewModel.selectedCountry
             stateTextField.text = nil
             cityTextField.text = nil
-            states = nil
-            cities = nil
+            viewModel.states = nil
+            viewModel.cities = nil
             statePickerView.reloadAllComponents()
             cityPickerView.reloadAllComponents()
         case 2:
-            selectedState = states?[row]
-            stateTextField.text = selectedState
+            viewModel.selectedState = viewModel.states?[row]
+            stateTextField.text = viewModel.selectedState
             cityTextField.text = nil
-            cities = nil
+            viewModel.cities = nil
             cityPickerView.reloadAllComponents()
         case 3:
-            selectedCity = cities?[row]
-            cityTextField.text = selectedCity
+            viewModel.selectedCity = viewModel.cities?[row]
+            cityTextField.text = viewModel.selectedCity
         default:
             break
         }

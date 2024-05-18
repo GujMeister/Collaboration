@@ -7,26 +7,14 @@
 
 import UIKit
 
-class AirQualityPageVC: UIViewController {
+final class AirQualityPageVC: UIViewController {
     
-    private let viewModel: AirQualityViewModel
-    var countries: [String]?
-    var states: [String]?
-    var cities: [String]?
-    var selectedCountry: String?
-    var selectedState: String?
-    var selectedCity: String?
+    let viewModel: AirQualityViewModel
     
     // MARK: - Initialization
-
-    init(viewModel: AirQualityViewModel, countries: [String]? = nil, states: [String]? = nil, cities: [String]? = nil, selectedCountry: String? = nil, selectedState: String? = nil, selectedCity: String? = nil) {
+    
+    init(viewModel: AirQualityViewModel) {
         self.viewModel = viewModel
-        self.countries = countries
-        self.states = states
-        self.cities = cities
-        self.selectedCountry = selectedCountry
-        self.selectedState = selectedState
-        self.selectedCity = selectedCity
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -286,9 +274,9 @@ class AirQualityPageVC: UIViewController {
     }
     
     @objc private func fetchButtonTapped() {
-        guard let country = selectedCountry,
-              let state = selectedState,
-              let city = selectedCity, !city.isEmpty else {
+        guard let country = viewModel.selectedCountry,
+              let state = viewModel.selectedState,
+              let city = viewModel.selectedCity, !city.isEmpty else {
             showAlert("🥺 Please fill in all fields 🥺")
             return
         }
@@ -300,13 +288,13 @@ class AirQualityPageVC: UIViewController {
     @objc private func doneButtonTapped() {
         if countryTextField.isFirstResponder {
             countryTextField.resignFirstResponder()
-            if let country = selectedCountry {
+            if let country = viewModel.selectedCountry {
                 let apiKey = "9491b1c0-d840-4ca0-a8a1-7ed13b629f4c"
                 viewModel.fetchStates(country: country, apiKey: apiKey)
             }
         } else if stateTextField.isFirstResponder {
             stateTextField.resignFirstResponder()
-            if let state = selectedState, let country = selectedCountry {
+            if let state = viewModel.selectedState, let country = viewModel.selectedCountry {
                 let apiKey = "9491b1c0-d840-4ca0-a8a1-7ed13b629f4c"
                 viewModel.fetchCities(state: state, country: country, apiKey: apiKey)
             }
@@ -322,6 +310,3 @@ class AirQualityPageVC: UIViewController {
     }
 }
 
-#Preview {
-    AirQualityPageVC(viewModel: AirQualityViewModel())
-}
