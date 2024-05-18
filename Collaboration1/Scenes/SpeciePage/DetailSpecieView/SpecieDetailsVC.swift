@@ -9,7 +9,7 @@ import UIKit
 
 final class SpecieDetailsVC: UIViewController {
     // MARK: - Properties
-    internal let viewModel = SpecieDetailsVM()
+    let viewModel = SpecieDetailsVM()
     private var dataSource: UICollectionViewDiffableDataSource<Int, NaturalistInfo.Taxon>!
 
     lazy var collectionView: UICollectionView = {

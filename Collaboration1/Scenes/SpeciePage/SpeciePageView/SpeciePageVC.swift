@@ -9,7 +9,8 @@ import UIKit
 
 final class SpeciePageVC: UIViewController {
     // MARK: - Properties
-    private let viewModel = SpeciePageVM()
+    private let viewModel: SpeciePageVM
+    
     private var isSearching = false
     
     private let titleLabel: UILabel = {
@@ -58,6 +59,16 @@ final class SpeciePageVC: UIViewController {
         
         return searchBar
     }()
+    
+    //MARK: ---init
+    init(viewModel: SpeciePageVM) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
