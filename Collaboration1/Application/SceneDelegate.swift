@@ -1,9 +1,9 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
@@ -11,20 +11,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let populationViewModel = PopulationViewModel()
         let speciePageVM = SpeciePageVM()
         let airQualityViewModel = AirQualityViewModel()
+        let weatherVM = WeatherPageVM()
 
         
         // Create Main the view controllers
         let firstVC = AirQualityPageVC(viewModel: airQualityViewModel)
         let secondVC = SolarResourcePageVC()
         let thirdVC = SpeciePageVC(viewModel: speciePageVM)
-        let fourthVC = WeatherPageVC()
+        let fourthVC = WeatherPageVC(viewModel: weatherVM)
         let fifthVC = PopulationPageVC(viewModel: populationViewModel)
-
+        
         // Create the tab bar controller and add view controllers to it
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [firstVC, secondVC, thirdVC, fourthVC, fifthVC]
         tabBarController.tabBar.backgroundColor = UIColor(hex: "262A34")
-
+        
         // Create tab bar items with colors
         if let items = tabBarController.tabBar.items {
             setTabBarItemImage(for: items[0], systemName: "wind", selectedColor: UIColor(hex: "FDEA00"), normalColor: .systemGray4)
@@ -37,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let items = tabBarController.tabBar.items {
             let yellowColor = UIColor(hex: "#FDEA00")
             let grayColor = UIColor.systemGray4
-
+            
             if #available(iOS 15.0, *) {
                 let configuration = UIImage.SymbolConfiguration(paletteColors: [grayColor, yellowColor])
                 let multicolorImage = UIImage(systemName: "cloud.sun.fill", withConfiguration: configuration)
@@ -53,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 items[3].image = grayImage
             }
         }
-
+        
         // Set the tab bar controller as root view controller
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController
