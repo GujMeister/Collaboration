@@ -11,7 +11,16 @@ final class SpeciePageVC: UIViewController {
     // MARK: - Properties
     private let viewModel = SpeciePageVM()
     private var isSearching = false
-
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .left
+        label.font = UIFont(name: "FiraGO-Bold", size: 24)
+        label.text = "Explore Countries Species"
+        return label
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -27,7 +36,8 @@ final class SpeciePageVC: UIViewController {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "Search Countries"
-        searchBar.barTintColor = UIColor(hex: "#262A34")
+        searchBar.barTintColor = UIColor(hex: "#3C4251")
+        
         searchBar.searchTextField.textColor = .white
         
         if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
@@ -41,6 +51,11 @@ final class SpeciePageVC: UIViewController {
                 leftView.tintColor = .white
             }
         }
+        
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor(hex: "#3C4251").cgColor
+        
+        
         return searchBar
     }()
     
@@ -49,27 +64,31 @@ final class SpeciePageVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
-        viewModel.filteredCountryCapitals = countryFlagsAndCapitals
     }
     
     // MARK: - Setup UI
     private func setupUI() {
         view.backgroundColor = UIColor(hex: "#3C4251")
         
+        view.addSubview(titleLabel)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            searchBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
