@@ -8,7 +8,6 @@
 import Foundation
 import SimpleNetworking
 
-
 protocol AirQualityViewModelDelegate: AnyObject {
     func didFailWithError(_ viewModel: AirQualityViewModel, error: Error)
     func didFetchCountries(_ viewModel: AirQualityViewModel, countries: [String])
@@ -18,7 +17,6 @@ protocol AirQualityViewModelDelegate: AnyObject {
 }
 
 class AirQualityViewModel {
-    
     weak var delegate: AirQualityViewModelDelegate?
     private let webService = WebService()
     

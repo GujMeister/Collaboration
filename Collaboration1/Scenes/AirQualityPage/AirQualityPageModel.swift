@@ -7,29 +7,6 @@
 
 import Foundation
 
-struct AirQualityResponse: Decodable {
-    let data: AirQualityData
-    let status: String
-}
-
-struct AirQualityData: Decodable {
-    let city: String
-    let state: String
-    let country: String
-    let current: CurrentData
-}
-
-struct CurrentData: Decodable {
-    let pollution: PollutionData
-}
-
-struct PollutionData: Decodable {
-    let aqicn: Int
-    let aqius: Int
-    let maincn: String
-    let mainus: String
-}
-
 struct CountriesResponse: Decodable {
     let data: [Country]
     let status: String
@@ -58,3 +35,28 @@ struct CitiesResponse: Decodable {
 struct City: Decodable {
     let city: String
 }
+
+struct AirQualityResponse: Decodable {
+    let data: AirQualityData
+    let status: String
+}
+
+struct AirQualityData: Decodable {
+    let city: String
+    let state: String
+    let country: String
+    let current: CurrentData
+}
+
+struct CurrentData: Decodable {
+    let pollution: PollutionData
+}
+
+struct PollutionData: Decodable {
+    let aqicn: Int
+    let aqius: Int
+    let maincn: String
+    let mainus: String
+}
+
+

@@ -9,7 +9,7 @@ import UIKit
 
 class AirQualityPageVC: UIViewController {
     
-    private let viewModel = AirQualityViewModel()
+    private let viewModel: AirQualityViewModel
     var countries: [String]?
     var states: [String]?
     var cities: [String]?
@@ -17,10 +17,37 @@ class AirQualityPageVC: UIViewController {
     var selectedState: String?
     var selectedCity: String?
     
+    // MARK: - Initialization
+
+    init(viewModel: AirQualityViewModel, countries: [String]? = nil, states: [String]? = nil, cities: [String]? = nil, selectedCountry: String? = nil, selectedState: String? = nil, selectedCity: String? = nil) {
+        self.viewModel = viewModel
+        self.countries = countries
+        self.states = states
+        self.cities = cities
+        self.selectedCountry = selectedCountry
+        self.selectedState = selectedState
+        self.selectedCity = selectedCity
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UI Components
+
     lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Image")
         return image
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.text = "City's Air Quality"
+        label.font = UIFont(name:"FiraGO-Bold", size: 30)
+        return label
     }()
     
     lazy var countryTextField: UITextField = {
@@ -29,9 +56,9 @@ class AirQualityPageVC: UIViewController {
         textField.backgroundColor = UIColor(hex: "#262A34")
         textField.textColor = .white
         textField.borderStyle = .roundedRect
-//        textField.borderStyle = .none
-//        textField.layer.cornerRadius = 15
-//        textField.layer.masksToBounds = true
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 15
+        textField.layer.masksToBounds = true
         textField.inputView = countryPickerView
         textField.inputAccessoryView = pickerViewToolbar
 
@@ -39,6 +66,18 @@ class AirQualityPageVC: UIViewController {
             .foregroundColor: UIColor.white
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "Select Country", attributes: placeholderAttributes)
+
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+
+        let chevronImageView = UIImageView(image: UIImage(systemName: "chevron.down"))
+        chevronImageView.tintColor = .white
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: textField.frame.height))
+        chevronImageView.center = rightView.center
+        rightView.addSubview(chevronImageView)
+        textField.rightView = rightView
+        textField.rightViewMode = .always
         return textField
     }()
 
@@ -48,10 +87,9 @@ class AirQualityPageVC: UIViewController {
         textField.backgroundColor = UIColor(hex: "#262A34")
         textField.textColor = .white
         textField.borderStyle = .roundedRect
-
-//        textField.borderStyle = .none
-//        textField.layer.cornerRadius = 15
-//        textField.layer.masksToBounds = true
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 15
+        textField.layer.masksToBounds = true
         textField.inputView = statePickerView
         textField.inputAccessoryView = pickerViewToolbar
 
@@ -59,6 +97,18 @@ class AirQualityPageVC: UIViewController {
             .foregroundColor: UIColor.white
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "Select State", attributes: placeholderAttributes)
+
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+
+        let chevronImageView = UIImageView(image: UIImage(systemName: "chevron.down"))
+        chevronImageView.tintColor = .white
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: textField.frame.height))
+        chevronImageView.center = rightView.center
+        rightView.addSubview(chevronImageView)
+        textField.rightView = rightView
+        textField.rightViewMode = .always
         return textField
     }()
 
@@ -68,10 +118,9 @@ class AirQualityPageVC: UIViewController {
         textField.backgroundColor = UIColor(hex: "#262A34")
         textField.textColor = .white
         textField.borderStyle = .roundedRect
-
-//        textField.borderStyle = .none
-//        textField.layer.cornerRadius = 15
-//        textField.layer.masksToBounds = true
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 15
+        textField.layer.masksToBounds = true
         textField.inputView = cityPickerView
         textField.inputAccessoryView = pickerViewToolbar
 
@@ -79,12 +128,25 @@ class AirQualityPageVC: UIViewController {
             .foregroundColor: UIColor.white
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "Select City", attributes: placeholderAttributes)
+
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+
+        let chevronImageView = UIImageView(image: UIImage(systemName: "chevron.down"))
+        chevronImageView.tintColor = .white
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: textField.frame.height))
+        chevronImageView.center = rightView.center
+        rightView.addSubview(chevronImageView)
+        textField.rightView = rightView
+        textField.rightViewMode = .always
         return textField
     }()
 
+
     lazy var fetchButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Fetch Air Quality", for: .normal)
+        button.setTitle("Generate Air Quality", for: .normal)
         button.titleLabel?.font = UIFont(name: "FiraGO-Bold", size: 14)
         button.backgroundColor = UIColor(hex: "#262A34")
         button.setTitleColor(.white, for: .normal)
@@ -139,6 +201,7 @@ class AirQualityPageVC: UIViewController {
         pickerView.tag = 3
         return pickerView
     }()
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,22 +213,30 @@ class AirQualityPageVC: UIViewController {
         fetchCountries()
     }
     
+    // MARK: - Setup Views
+
     private func setupViews() {
-        
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            imageView.heightAnchor.constraint(equalToConstant: 300)
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
         ])
         
+        view.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+
+
         view.addSubview(countryTextField)
         countryTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            countryTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            countryTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            countryTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
             countryTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             countryTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             countryTextField.heightAnchor.constraint(equalToConstant: 40)
@@ -194,9 +265,8 @@ class AirQualityPageVC: UIViewController {
         NSLayoutConstraint.activate([
             fetchButton.topAnchor.constraint(equalTo: cityTextField.bottomAnchor, constant: 50),
             fetchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fetchButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120),
-            fetchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -120),
-            fetchButton.heightAnchor.constraint(equalToConstant: 40)
+            fetchButton.heightAnchor.constraint(equalToConstant: 40),
+            fetchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
         ])
         
         view.addSubview(airQualityLabel)
@@ -208,6 +278,8 @@ class AirQualityPageVC: UIViewController {
         ])
     }
     
+    // MARK: - Fetch Countries Function + showAlert Function
+
     private func fetchCountries() {
         let apiKey = "9491b1c0-d840-4ca0-a8a1-7ed13b629f4c"
         viewModel.fetchCountries(apiKey: apiKey)
@@ -217,7 +289,7 @@ class AirQualityPageVC: UIViewController {
         guard let country = selectedCountry,
               let state = selectedState,
               let city = selectedCity, !city.isEmpty else {
-            showAlert("Please fill in all fields.")
+            showAlert("🥺 Please fill in all fields 🥺")
             return
         }
         
@@ -250,94 +322,6 @@ class AirQualityPageVC: UIViewController {
     }
 }
 
-//extension AirQualityPageVC: AirQualityViewModelDelegate {
-//    func didUpdateAirQuality(_ viewModel: AirQualityViewModel, airQuality: PollutionData) {
-//        DispatchQueue.main.async {
-//            self.airQualityLabel.text = "AQI US: \(airQuality.aqius)\nAQI CN: \(airQuality.aqicn)\nMain Pollutant US: \(airQuality.mainus)\nMain Pollutant CN: \(airQuality.maincn)"
-//        }
-//    }
-//    
-//    func didFailWithError(_ viewModel: AirQualityViewModel, error: Error) {
-//        DispatchQueue.main.async {
-//            self.showAlert("Failed to fetch air quality data: \(error.localizedDescription)")
-//        }
-//    }
-//    
-//    func didFetchCountries(_ viewModel: AirQualityViewModel, countries: [String]) {
-//        DispatchQueue.main.async {
-//            self.countries = countries
-//            self.countryPickerView.reloadAllComponents()
-//        }
-//    }
-//    
-//    func didFetchStates(_ viewModel: AirQualityViewModel, states: [String]) {
-//        DispatchQueue.main.async {
-//            self.states = states
-//            self.statePickerView.reloadAllComponents()
-//        }
-//    }
-//    
-//    func didFetchCities(_ viewModel: AirQualityViewModel, cities: [String]) {
-//        DispatchQueue.main.async {
-//            self.cities = cities
-//            self.cityPickerView.reloadAllComponents()
-//        }
-//    }
-//}
-//
-//extension AirQualityPageVC: UIPickerViewDataSource, UIPickerViewDelegate {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        switch pickerView.tag {
-//        case 1:
-//            return countries?.count ?? 0
-//        case 2:
-//            return states?.count ?? 0
-//        case 3:
-//            return cities?.count ?? 0
-//        default:
-//            return 0
-//        }
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        switch pickerView.tag {
-//        case 1:
-//            return countries?[row]
-//        case 2:
-//            return states?[row]
-//        case 3:
-//            return cities?[row]
-//        default:
-//            return nil
-//        }
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        switch pickerView.tag {
-//        case 1:
-//            selectedCountry = countries?[row]
-//            countryTextField.text = selectedCountry
-//            stateTextField.text = nil
-//            cityTextField.text = nil
-//            states = nil
-//            cities = nil
-//            statePickerView.reloadAllComponents()
-//            cityPickerView.reloadAllComponents()
-//        case 2:
-//            selectedState = states?[row]
-//            stateTextField.text = selectedState
-//            cityTextField.text = nil
-//            cities = nil
-//            cityPickerView.reloadAllComponents()
-//        case 3:
-//            selectedCity = cities?[row]
-//            cityTextField.text = selectedCity
-//        default:
-//            break
-//        }
-//    }
-//}
+#Preview {
+    AirQualityPageVC(viewModel: AirQualityViewModel())
+}

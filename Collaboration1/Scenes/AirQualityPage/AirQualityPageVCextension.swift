@@ -1,23 +1,26 @@
 //
-//  VCPageExtension.swift
+//  AirQualityPageVCextension.swift
 //  Collaboration1
 //
 //  Created by Ana on 5/18/24.
 //
 
-
 import UIKit
+
+// MARK: - AirQualityViewModelDelegate
 
 extension AirQualityPageVC: AirQualityViewModelDelegate {
     func didUpdateAirQuality(_ viewModel: AirQualityViewModel, airQuality: PollutionData) {
         DispatchQueue.main.async {
             self.airQualityLabel.text = "AQI US: \(airQuality.aqius)\nAQI CN: \(airQuality.aqicn)\nMain Pollutant US: \(airQuality.mainus)\nMain Pollutant CN: \(airQuality.maincn)"
+            self.airQualityLabel.textColor = .white
+            self.airQualityLabel.font = UIFont(name: "FiraGO-Regular", size: 17)
         }
     }
     
     func didFailWithError(_ viewModel: AirQualityViewModel, error: Error) {
         DispatchQueue.main.async {
-            self.showAlert("Failed to fetch air quality data: \(error.localizedDescription)")
+            self.showAlert("There is no city in this state")
         }
     }
     
@@ -43,7 +46,9 @@ extension AirQualityPageVC: AirQualityViewModelDelegate {
     }
 }
 
-extension AirQualityPageVC: UIPickerViewDataSource, UIPickerViewDelegate {
+// MARK: - UIPickerViewDataSource
+
+extension AirQualityPageVC: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -60,7 +65,11 @@ extension AirQualityPageVC: UIPickerViewDataSource, UIPickerViewDelegate {
             return 0
         }
     }
-    
+}
+
+// MARK: - UIPickerViewDelegate
+
+extension AirQualityPageVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:

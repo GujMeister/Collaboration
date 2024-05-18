@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		592F6BD32BF7F7A50074ED83 /* AirQualityPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F6BD22BF7F7A50074ED83 /* AirQualityPageModel.swift */; };
-		592F6BD52BF890070074ED83 /* VCPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F6BD42BF890070074ED83 /* VCPageExtension.swift */; };
+		592F6BD52BF890070074ED83 /* AirQualityPageVCextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F6BD42BF890070074ED83 /* AirQualityPageVCextension.swift */; };
 		85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120B2BF6A067004353CB /* AppDelegate.swift */; };
 		85C7120E2BF6A067004353CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120D2BF6A067004353CB /* SceneDelegate.swift */; };
 		85C712152BF6A069004353CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C712142BF6A069004353CB /* Assets.xcassets */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		592F6BD22BF7F7A50074ED83 /* AirQualityPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageModel.swift; sourceTree = "<group>"; };
-		592F6BD42BF890070074ED83 /* VCPageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPageExtension.swift; sourceTree = "<group>"; };
+		592F6BD42BF890070074ED83 /* AirQualityPageVCextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageVCextension.swift; sourceTree = "<group>"; };
 		85C712082BF6A067004353CB /* Collaboration1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collaboration1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C7120B2BF6A067004353CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C7120D2BF6A067004353CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				85C712252BF6A185004353CB /* AirQualityPageVC.swift */,
 				85C712272BF6A198004353CB /* AirQualityPageVM.swift */,
 				592F6BD22BF7F7A50074ED83 /* AirQualityPageModel.swift */,
-				592F6BD42BF890070074ED83 /* VCPageExtension.swift */,
+				592F6BD42BF890070074ED83 /* AirQualityPageVCextension.swift */,
 			);
 			path = AirQualityPage;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				85C712282BF6A198004353CB /* AirQualityPageVM.swift in Sources */,
 				85C7123E2BF6A4E2004353CB /* UIColor.swift in Sources */,
 				85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */,
-				592F6BD52BF890070074ED83 /* VCPageExtension.swift in Sources */,
+				592F6BD52BF890070074ED83 /* AirQualityPageVCextension.swift in Sources */,
 				85C7123A2BF6A268004353CB /* PopulationPageVC.swift in Sources */,
 				85C7120E2BF6A067004353CB /* SceneDelegate.swift in Sources */,
 			);
