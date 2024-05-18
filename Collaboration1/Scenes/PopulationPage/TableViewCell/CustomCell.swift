@@ -13,11 +13,11 @@ final class CustomCell: UITableViewCell {
     //MARK: ---Properties
      lazy var rectangleView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 25
         view.layer.borderWidth = 1
         view.layer.masksToBounds = true
+        view.backgroundColor =  UIColor(hex: "262A34")
         view.translatesAutoresizingMaskIntoConstraints = false
-        updateAppearance(for: view)
         return view
     }()
     
@@ -25,7 +25,7 @@ final class CustomCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "FiraGO-Bold", size: 16)
-        label.textColor = .label
+        label.textColor = .white
         return label
     }()
     
@@ -44,6 +44,7 @@ final class CustomCell: UITableViewCell {
     // MARK: - Setup UI
     
     private func setupUI() {
+        contentView.backgroundColor = UIColor(hex: "#3C4251")
         contentView.addSubview(rectangleView)
         rectangleView.addSubview(titleLabel)
         
@@ -59,24 +60,4 @@ final class CustomCell: UITableViewCell {
         ])
     }
     
-    // MARK: - Trait Changes
-    
-    private func updateAppearance(for view: UIView) {
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-            view.layer.borderColor = UIColor { traitCollection -> UIColor in
-                return traitCollection.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
-            }.cgColor
-        } else {
-            view.backgroundColor = .white
-            view.layer.borderColor = UIColor.black.cgColor
-        }
-    }
-
-    // MARK: - Prepare for Reuse
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        updateAppearance(for: rectangleView)
-    }
 }

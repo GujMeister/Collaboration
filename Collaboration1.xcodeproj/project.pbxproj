@@ -106,6 +106,14 @@
 			path = details;
 			sourceTree = "<group>";
 		};
+		75AD62FC2BF8DBCD009D1BCA /* Population */ = {
+			isa = PBXGroup;
+			children = (
+				753936832BF7516C004C0368 /* PopulationPageModel.swift */,
+			);
+			path = Population;
+			sourceTree = "<group>";
+		};
 		85C711FF2BF6A067004353CB = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +225,6 @@
 				85C712392BF6A268004353CB /* PopulationPageVC.swift */,
 				85C7123B2BF6A275004353CB /* PopulationPageVM.swift */,
 				7539368A2BF7DB1F004C0368 /* populationPageExtension.swift */,
-				753936832BF7516C004C0368 /* PopulationPageModel.swift */,
 				7539368E2BF7DC52004C0368 /* details */,
 				753936892BF7DAA0004C0368 /* TableViewCell */,
 			);
@@ -263,6 +270,7 @@
 		85C712A02BF82310004353CB /* ProjectModels */ = {
 			isa = PBXGroup;
 			children = (
+				75AD62FC2BF8DBCD009D1BCA /* Population */,
 				85C712A32BF823BD004353CB /* Specie */,
 			);
 			path = ProjectModels;

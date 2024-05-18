@@ -31,8 +31,8 @@ final class CustomInfoViewController: UIViewController {
         let button = UIButton(type: .system)
         button.titleLabel?.font = UIFont(name: "FiraGO-Regular", size: 25)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemGray
-        button.layer.cornerRadius = 10
+        button.backgroundColor = UIColor(hex: "#262A34")
+        button.layer.cornerRadius = 20
         return button
     }()
     
@@ -43,10 +43,12 @@ final class CustomInfoViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .darkGray
+        view.backgroundColor = UIColor(hex: "#3C4251")
         
         okButton.setTitle("OK", for: .normal)
-        okButton.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
+        okButton.addAction(UIAction(handler: { _ in
+            self.dismissAlert()
+        }), for: .touchUpInside)
         
         stackView.addArrangedSubview(messageLabel)
         stackView.addArrangedSubview(okButton)
@@ -65,11 +67,12 @@ final class CustomInfoViewController: UIViewController {
         viewModel.processMessage()
     }
     
-    @objc private func dismissAlert() {
+     func dismissAlert() {
         dismiss(animated: true, completion: nil)
     }
 }
 
+//MARK: ---extension
 extension CustomInfoViewController: CustomInfoViewModelDelegate {
     func didUpdateMessage(_ message: String) {
         messageLabel.text = message

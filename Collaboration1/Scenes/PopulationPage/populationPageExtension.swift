@@ -37,7 +37,7 @@ extension PopulationPageVC: PopulationViewModelDelegate {
     }
     
     func didFetchCountryInformation(_ information: String, for country: String) {
-        let message = "\(country)\n\(information)"
+        let message = "\(country)\n\n\(information)"
         showCustomAlert(message: message)
     }
     

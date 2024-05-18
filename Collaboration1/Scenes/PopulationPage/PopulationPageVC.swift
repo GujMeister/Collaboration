@@ -9,23 +9,46 @@ import UIKit
 
 final class PopulationPageVC: UIViewController {
     //MARK: ---Properties
+    lazy var headerTitle: UILabel = {
+        let title = UILabel()
+        title.text = "Population"
+        title.textColor = .white
+        title.font = UIFont(name: "FiraGO-Bold", size: 30)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        return title
+    }()
+    
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search for a country/region"
-        searchBar.showsCancelButton = true
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.barTintColor = UIColor(hex: "#3C4251")
+        if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
+            let placeholderText = searchBar.placeholder ?? ""
+            searchTextField.attributedPlaceholder = NSAttributedString(
+                string: placeholderText,
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+            )
+            
+            if let leftView = searchTextField.leftView as? UIImageView {
+                leftView.tintColor = .white
+            }
+        }
+        searchBar.searchTextField.textColor = .white
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = UIColor(hex: "#3C4251").cgColor
         return searchBar
     }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .systemBackground
         tableView.allowsSelection = true
         tableView.separatorStyle = .none
         tableView.frame = view.bounds
         tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = 76
+        tableView.backgroundColor = UIColor(hex: "#3C4251")
         return tableView
     }()
     
@@ -48,11 +71,16 @@ final class PopulationPageVC: UIViewController {
     //MARK: ---Methods
     
     private func setupUI() {
+        view.backgroundColor = UIColor(hex: "#3C4251")
+        view.addSubview(headerTitle)
         view.addSubview(tableView)
         view.addSubview(searchBar)
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
+            
+            searchBar.topAnchor.constraint(equalTo: headerTitle.bottomAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
