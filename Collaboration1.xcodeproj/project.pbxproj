@@ -28,7 +28,6 @@
 		85C7124B2BF6BF1E004353CB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 85C7124A2BF6BF1E004353CB /* SDWebImage */; };
 		85C7124D2BF6BF1E004353CB /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 85C7124C2BF6BF1E004353CB /* SDWebImageMapKit */; };
 		CC36A8482BF774DF00A41451 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36A8472BF774DF00A41451 /* ForecastModel.swift */; };
-		CC36A84D2BF7FB2B00A41451 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36A84C2BF7FB2B00A41451 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		85C712452BF6A71C004353CB /* FiraGO-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Bold.ttf"; sourceTree = "<group>"; };
 		85C712472BF6A730004353CB /* FiraGO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraGO-Regular.ttf"; sourceTree = "<group>"; };
 		CC36A8472BF774DF00A41451 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
-		CC36A84C2BF7FB2B00A41451 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +150,6 @@
 			children = (
 				85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */,
 				85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */,
-				CC36A84C2BF7FB2B00A41451 /* NetworkService.swift */,
 				CC36A8492BF793E600A41451 /* Model */,
 			);
 			path = WeatherPage;
@@ -291,7 +288,6 @@
 				85C712372BF6A248004353CB /* SolarResourcePageVC.swift in Sources */,
 				85C712302BF6A206004353CB /* SpeciePageVC.swift in Sources */,
 				85C712282BF6A198004353CB /* AirQualityPageVM.swift in Sources */,
-				CC36A84D2BF7FB2B00A41451 /* NetworkService.swift in Sources */,
 				85C7123E2BF6A4E2004353CB /* UIColor.swift in Sources */,
 				85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */,
 				85C7123A2BF6A268004353CB /* PopulationPageVC.swift in Sources */,
