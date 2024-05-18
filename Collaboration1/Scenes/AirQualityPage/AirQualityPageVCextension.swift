@@ -14,13 +14,13 @@ extension AirQualityPageVC: AirQualityViewModelDelegate {
         DispatchQueue.main.async {
             self.airQualityLabel.text = "AQI US: \(airQuality.aqius)\nAQI CN: \(airQuality.aqicn)\nMain Pollutant US: \(airQuality.mainus)\nMain Pollutant CN: \(airQuality.maincn)"
             self.airQualityLabel.textColor = .white
-            self.airQualityLabel.font = UIFont(name: "FiraGO-Regular", size: 17)
+            self.airQualityLabel.font = UIFont(name: "FiraGO-Regular", size: 16)
         }
     }
     
     func didFailWithError(error: Error) {
         DispatchQueue.main.async {
-            self.showAlert("There is no city in this state")
+            self.showAlert("🥹 There is no city in this state 🥹")
         }
     }
     
