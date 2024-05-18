@@ -9,23 +9,24 @@ import Foundation
 import SimpleNetworking
 
 protocol AirQualityViewModelDelegate: AnyObject {
-    func didFailWithError(_ viewModel: AirQualityViewModel, error: Error)
-    func didFetchCountries(_ viewModel: AirQualityViewModel, countries: [String])
-    func didFetchStates(_ viewModel: AirQualityViewModel, states: [String])
-    func didFetchCities(_ viewModel: AirQualityViewModel, cities: [String])
-    func didUpdateAirQuality(_ viewModel: AirQualityViewModel, airQuality: PollutionData)
+    func didFailWithError(error: Error)
+    func didFetchCountries(countries: [String])
+    func didFetchStates(states: [String])
+    func didFetchCities(cities: [String])
+    func didUpdateAirQuality(airQuality: PollutionData)
 }
+
 
 class AirQualityViewModel {
     weak var delegate: AirQualityViewModelDelegate?
     private let webService = WebService()
     
-    var countries: [String]?
-    var states: [String]?
-    var cities: [String]?
-    var selectedCountry: String?
-    var selectedState: String?
-    var selectedCity: String?
+    private(set) var countries: [String]?
+    private(set) var states: [String]?
+    private(set) var cities: [String]?
+    private(set) var selectedCountry: String?
+    private(set) var selectedState: String?
+    private(set) var selectedCity: String?
     
     func fetchCountries(apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/countries?key=\(apiKey)"
@@ -33,10 +34,10 @@ class AirQualityViewModel {
         webService.fetchData(from: urlString, resultType: CountriesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
-                let countries = response.data.map { $0.country }
-                self?.delegate?.didFetchCountries(self!, countries: countries)
+                self?.countries = response.data.map { $0.country }
+                self?.delegate?.didFetchCountries(countries: self?.countries ?? [])
             case .failure(let error):
-                self?.delegate?.didFailWithError(self!, error: error)
+                self?.delegate?.didFailWithError(error: error)
             }
         }
     }
@@ -47,10 +48,10 @@ class AirQualityViewModel {
         webService.fetchData(from: urlString, resultType: StatesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
-                let states = response.data.map { $0.state }
-                self?.delegate?.didFetchStates(self!, states: states)
+                self?.states = response.data.map { $0.state }
+                self?.delegate?.didFetchStates(states: self?.states ?? [])
             case .failure(let error):
-                self?.delegate?.didFailWithError(self!, error: error)
+                self?.delegate?.didFailWithError(error: error)
             }
         }
     }
@@ -61,10 +62,10 @@ class AirQualityViewModel {
         webService.fetchData(from: urlString, resultType: CitiesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
-                let cities = response.data.map { $0.city }
-                self?.delegate?.didFetchCities(self!, cities: cities)
+                self?.cities = response.data.map { $0.city }
+                self?.delegate?.didFetchCities(cities: self?.cities ?? [])
             case .failure(let error):
-                self?.delegate?.didFailWithError(self!, error: error)
+                self?.delegate?.didFailWithError(error: error)
             }
         }
     }
@@ -75,10 +76,48 @@ class AirQualityViewModel {
         webService.fetchData(from: urlString, resultType: AirQualityResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.delegate?.didUpdateAirQuality(self!, airQuality: response.data.current.pollution)
+                self?.delegate?.didUpdateAirQuality(airQuality: response.data.current.pollution)
             case .failure(let error):
-                self?.delegate?.didFailWithError(self!, error: error)
+                self?.delegate?.didFailWithError(error: error)
             }
         }
+    }
+    
+    // Getters for the private properties
+    func getCountries() -> [String]? {
+        return countries
+    }
+    
+    func getStates() -> [String]? {
+        return states
+    }
+    
+    func getCities() -> [String]? {
+        return cities
+    }
+    
+    func getSelectedCountry() -> String? {
+        return selectedCountry
+    }
+    
+    func getSelectedState() -> String? {
+        return selectedState
+    }
+    
+    func getSelectedCity() -> String? {
+        return selectedCity
+    }
+    
+    // Setters for the private properties
+    func setSelectedCountry(_ country: String?) {
+        selectedCountry = country
+    }
+    
+    func setSelectedState(_ state: String?) {
+        selectedState = state
+    }
+    
+    func setSelectedCity(_ city: String?) {
+        selectedCity = city
     }
 }

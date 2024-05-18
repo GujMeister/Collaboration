@@ -10,7 +10,7 @@ import UIKit
 // MARK: - AirQualityViewModelDelegate
 
 extension AirQualityPageVC: AirQualityViewModelDelegate {
-    func didUpdateAirQuality(_ viewModel: AirQualityViewModel, airQuality: PollutionData) {
+    func didUpdateAirQuality(airQuality: PollutionData) {
         DispatchQueue.main.async {
             self.airQualityLabel.text = "AQI US: \(airQuality.aqius)\nAQI CN: \(airQuality.aqicn)\nMain Pollutant US: \(airQuality.mainus)\nMain Pollutant CN: \(airQuality.maincn)"
             self.airQualityLabel.textColor = .white
@@ -18,33 +18,31 @@ extension AirQualityPageVC: AirQualityViewModelDelegate {
         }
     }
     
-    func didFailWithError(_ viewModel: AirQualityViewModel, error: Error) {
+    func didFailWithError(error: Error) {
         DispatchQueue.main.async {
             self.showAlert("There is no city in this state")
         }
     }
     
-    func didFetchCountries(_ viewModel: AirQualityViewModel, countries: [String]) {
+    func didFetchCountries(countries: [String]) {
         DispatchQueue.main.async {
-            viewModel.countries = countries
             self.countryPickerView.reloadAllComponents()
         }
     }
     
-    func didFetchStates(_ viewModel: AirQualityViewModel, states: [String]) {
+    func didFetchStates(states: [String]) {
         DispatchQueue.main.async {
-            viewModel.states = states
             self.statePickerView.reloadAllComponents()
         }
     }
     
-    func didFetchCities(_ viewModel: AirQualityViewModel, cities: [String]) {
+    func didFetchCities(cities: [String]) {
         DispatchQueue.main.async {
-            viewModel.cities = cities
             self.cityPickerView.reloadAllComponents()
         }
     }
 }
+
 
 // MARK: - UIPickerViewDataSource
 
@@ -56,28 +54,27 @@ extension AirQualityPageVC: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
         case 1:
-            return viewModel.countries?.count ?? 0
+            return viewModel.getCountries()?.count ?? 0
         case 2:
-            return viewModel.states?.count ?? 0
+            return viewModel.getStates()?.count ?? 0
         case 3:
-            return viewModel.cities?.count ?? 0
+            return viewModel.getCities()?.count ?? 0
         default:
             return 0
         }
     }
 }
-
 // MARK: - UIPickerViewDelegate
 
 extension AirQualityPageVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView.tag {
         case 1:
-            return viewModel.countries?[row]
+            return viewModel.getCountries()?[row]
         case 2:
-            return viewModel.states?[row]
+            return viewModel.getStates()?[row]
         case 3:
-            return viewModel.cities?[row]
+            return viewModel.getCities()?[row]
         default:
             return nil
         }
@@ -86,23 +83,23 @@ extension AirQualityPageVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            viewModel.selectedCountry = viewModel.countries?[row]
-            countryTextField.text = viewModel.selectedCountry
+            viewModel.setSelectedCountry(viewModel.getCountries()?[row])
+            countryTextField.text = viewModel.getSelectedCountry()
             stateTextField.text = nil
             cityTextField.text = nil
-            viewModel.states = nil
-            viewModel.cities = nil
+            viewModel.setSelectedState(nil)
+            viewModel.setSelectedCity(nil)
             statePickerView.reloadAllComponents()
             cityPickerView.reloadAllComponents()
         case 2:
-            viewModel.selectedState = viewModel.states?[row]
-            stateTextField.text = viewModel.selectedState
+            viewModel.setSelectedState(viewModel.getStates()?[row])
+            stateTextField.text = viewModel.getSelectedState()
             cityTextField.text = nil
-            viewModel.cities = nil
+            viewModel.setSelectedCity(nil)
             cityPickerView.reloadAllComponents()
         case 3:
-            viewModel.selectedCity = viewModel.cities?[row]
-            cityTextField.text = viewModel.selectedCity
+            viewModel.setSelectedCity(viewModel.getCities()?[row])
+            cityTextField.text = viewModel.getSelectedCity()
         default:
             break
         }
