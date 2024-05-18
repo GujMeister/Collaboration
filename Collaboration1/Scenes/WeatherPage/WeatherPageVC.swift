@@ -207,7 +207,7 @@ final class WeatherPageVC: UIViewController {
         viewModel.fetchWeather(with: city)
     }
     
-    private func updateUI(with weather: WeatherForecast) {
+    private func updateUI(with weather: WeatherPageModel.WeatherForecast) {
         if let temp = weather.list.first?.main.temp {
             tempLabel.text = "\(round(temp-273.15))°"
         }

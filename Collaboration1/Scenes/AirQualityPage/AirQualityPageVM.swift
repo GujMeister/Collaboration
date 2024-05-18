@@ -13,7 +13,7 @@ protocol AirQualityViewModelDelegate: AnyObject {
     func didFetchCountries(countries: [String])
     func didFetchStates(states: [String])
     func didFetchCities(cities: [String])
-    func didUpdateAirQuality(airQuality: PollutionData)
+    func didUpdateAirQuality(airQuality: AirQualityModel.PollutionData)
 }
 
 
@@ -31,7 +31,7 @@ class AirQualityViewModel {
     func fetchCountries(apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/countries?key=\(apiKey)"
         
-        webService.fetchData(from: urlString, resultType: CountriesResponse.self) { [weak self] result in
+        WebService().fetchData(from: urlString, resultType: AirQualityModel.CountriesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.countries = response.data.map { $0.country }
@@ -45,7 +45,7 @@ class AirQualityViewModel {
     func fetchStates(country: String, apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/states?country=\(country)&key=\(apiKey)"
         
-        webService.fetchData(from: urlString, resultType: StatesResponse.self) { [weak self] result in
+        webService.fetchData(from: urlString, resultType: AirQualityModel.StatesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.states = response.data.map { $0.state }
@@ -59,7 +59,7 @@ class AirQualityViewModel {
     func fetchCities(state: String, country: String, apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/cities?state=\(state)&country=\(country)&key=\(apiKey)"
         
-        webService.fetchData(from: urlString, resultType: CitiesResponse.self) { [weak self] result in
+        webService.fetchData(from: urlString, resultType: AirQualityModel.CitiesResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.cities = response.data.map { $0.city }
@@ -73,7 +73,7 @@ class AirQualityViewModel {
     func fetchAirQuality(city: String, state: String, country: String, apiKey: String) {
         let urlString = "https://api.airvisual.com/v2/city?city=\(city)&state=\(state)&country=\(country)&key=\(apiKey)"
         
-        webService.fetchData(from: urlString, resultType: AirQualityResponse.self) { [weak self] result in
+        webService.fetchData(from: urlString, resultType: AirQualityModel.AirQualityResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.delegate?.didUpdateAirQuality(airQuality: response.data.current.pollution)
@@ -108,7 +108,6 @@ class AirQualityViewModel {
         return selectedCity
     }
     
-    // Setters for the private properties
     func setSelectedCountry(_ country: String?) {
         selectedCountry = country
     }

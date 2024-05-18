@@ -10,7 +10,7 @@ import UIKit
 // MARK: - AirQualityViewModelDelegate
 
 extension AirQualityPageVC: AirQualityViewModelDelegate {
-    func didUpdateAirQuality(airQuality: PollutionData) {
+    func didUpdateAirQuality(airQuality: AirQualityModel.PollutionData) {
         DispatchQueue.main.async {
             self.airQualityLabel.text = "AQI US: \(airQuality.aqius)\nAQI CN: \(airQuality.aqicn)\nMain Pollutant US: \(airQuality.mainus)\nMain Pollutant CN: \(airQuality.maincn)"
             self.airQualityLabel.textColor = .white
