@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		596F94462BF9463A0092F51C /* AirQualityPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F94452BF9463A0092F51C /* AirQualityPageModel.swift */; };
+		596F94482BF9464E0092F51C /* AirQualityPageVCextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */; };
 		753936842BF7516C004C0368 /* PopulationPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753936832BF7516C004C0368 /* PopulationPageModel.swift */; };
 		753936882BF7B413004C0368 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753936872BF7B413004C0368 /* CustomCell.swift */; };
 		7539368B2BF7DB1F004C0368 /* populationPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539368A2BF7DB1F004C0368 /* populationPageExtension.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		596F94452BF9463A0092F51C /* AirQualityPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageModel.swift; sourceTree = "<group>"; };
+		596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageVCextension.swift; sourceTree = "<group>"; };
 		753936832BF7516C004C0368 /* PopulationPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationPageModel.swift; sourceTree = "<group>"; };
 		753936872BF7B413004C0368 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7539368A2BF7DB1F004C0368 /* populationPageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = populationPageExtension.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				85C712252BF6A185004353CB /* AirQualityPageVC.swift */,
 				85C712272BF6A198004353CB /* AirQualityPageVM.swift */,
+				596F94452BF9463A0092F51C /* AirQualityPageModel.swift */,
+				596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */,
 			);
 			path = AirQualityPage;
 			sourceTree = "<group>";
@@ -383,7 +389,9 @@
 				85C7122B2BF6A1D6004353CB /* WeatherPageVC.swift in Sources */,
 				85C7122D2BF6A1E0004353CB /* WeatherPageVM.swift in Sources */,
 				85C712322BF6A216004353CB /* SpeciePageVM.swift in Sources */,
+				596F94462BF9463A0092F51C /* AirQualityPageModel.swift in Sources */,
 				85C712372BF6A248004353CB /* SolarResourcePageVC.swift in Sources */,
+				596F94482BF9464E0092F51C /* AirQualityPageVCextension.swift in Sources */,
 				CC36A8542BF955B500A41451 /* ForecastModel.swift in Sources */,
 				85C712A52BF823CE004353CB /* NaturalistInfoModel.swift in Sources */,
 				753936882BF7B413004C0368 /* CustomCell.swift in Sources */,

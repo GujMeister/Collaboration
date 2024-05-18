@@ -10,10 +10,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create View Models
         let populationViewModel = PopulationViewModel()
         let speciePageVM = SpeciePageVM()
+        let airQualityViewModel = AirQualityViewModel()
         let weatherVM = WeatherPageVM()
+
         
         // Create Main the view controllers
-        let firstVC = AirQualityPageVC()
+        let firstVC = AirQualityPageVC(viewModel: airQualityViewModel)
         let secondVC = SolarResourcePageVC()
         let thirdVC = SpeciePageVC(viewModel: speciePageVM)
         let fourthVC = WeatherPageVC(viewModel: weatherVM)
