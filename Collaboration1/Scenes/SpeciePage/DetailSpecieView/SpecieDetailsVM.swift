@@ -19,7 +19,7 @@ final class SpecieDetailsVM {
         }
     }
     
-    internal var species: [NaturalistInfo.Taxon] = [] {
+    var species: [NaturalistInfo.Taxon] = [] {
         didSet {
             onSpeciesInfoUpdate?(species)
         }
@@ -28,7 +28,7 @@ final class SpecieDetailsVM {
     var onSpeciesInfoUpdate: (([NaturalistInfo.Taxon]) -> Void)?
     
     
-    internal func fetchCityID(with passedCountry: String) {
+    func fetchCityID(with passedCountry: String) {
         WebService().fetchData(from: "https://api.inaturalist.org/v1/places/autocomplete?q=\(passedCountry)", resultType: CityIDModel.self) { result in
             switch result {
             case .success(let cityIDModel):
