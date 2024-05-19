@@ -14,6 +14,8 @@
 		7539368B2BF7DB1F004C0368 /* populationPageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539368A2BF7DB1F004C0368 /* populationPageExtension.swift */; };
 		7539368D2BF7DC3C004C0368 /* CustomInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539368C2BF7DC3C004C0368 /* CustomInfoViewController.swift */; };
 		753936902BF7E20C004C0368 /* CustomInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539368F2BF7E20C004C0368 /* CustomInfoViewModel.swift */; };
+		755DE3642BF9917100E58DCB /* CollaborationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755DE3632BF9917100E58DCB /* CollaborationTests.swift */; };
+		755DE36E2BF9934E00E58DCB /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755DE36D2BF9934E00E58DCB /* MockURLProtocol.swift */; };
 		85C7120C2BF6A067004353CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120B2BF6A067004353CB /* AppDelegate.swift */; };
 		85C7120E2BF6A067004353CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C7120D2BF6A067004353CB /* SceneDelegate.swift */; };
 		85C712152BF6A069004353CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C712142BF6A069004353CB /* Assets.xcassets */; };
@@ -45,6 +47,16 @@
 		CC36A8542BF955B500A41451 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36A8532BF955B500A41451 /* ForecastModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		755DE3652BF9917100E58DCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85C712002BF6A067004353CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85C712072BF6A067004353CB;
+			remoteInfo = Collaboration1;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		596F94452BF9463A0092F51C /* AirQualityPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageModel.swift; sourceTree = "<group>"; };
 		596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityPageVCextension.swift; sourceTree = "<group>"; };
@@ -53,6 +65,9 @@
 		7539368A2BF7DB1F004C0368 /* populationPageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = populationPageExtension.swift; sourceTree = "<group>"; };
 		7539368C2BF7DC3C004C0368 /* CustomInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoViewController.swift; sourceTree = "<group>"; };
 		7539368F2BF7E20C004C0368 /* CustomInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoViewModel.swift; sourceTree = "<group>"; };
+		755DE3612BF9917100E58DCB /* CollaborationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollaborationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		755DE3632BF9917100E58DCB /* CollaborationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborationTests.swift; sourceTree = "<group>"; };
+		755DE36D2BF9934E00E58DCB /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		85C712082BF6A067004353CB /* Collaboration1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collaboration1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C7120B2BF6A067004353CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85C7120D2BF6A067004353CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +99,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		755DE35E2BF9917100E58DCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85C712052BF6A067004353CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +136,22 @@
 			path = details;
 			sourceTree = "<group>";
 		};
+		755DE3622BF9917100E58DCB /* CollaborationTests */ = {
+			isa = PBXGroup;
+			children = (
+				755DE3632BF9917100E58DCB /* CollaborationTests.swift */,
+			);
+			path = CollaborationTests;
+			sourceTree = "<group>";
+		};
+		755DE36A2BF9926D00E58DCB /* TestModel */ = {
+			isa = PBXGroup;
+			children = (
+				755DE36D2BF9934E00E58DCB /* MockURLProtocol.swift */,
+			);
+			path = TestModel;
+			sourceTree = "<group>";
+		};
 		75AD62FC2BF8DBCD009D1BCA /* Population */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				85C7120A2BF6A067004353CB /* Collaboration1 */,
+				755DE3622BF9917100E58DCB /* CollaborationTests */,
 				85C712092BF6A067004353CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				85C712082BF6A067004353CB /* Collaboration1.app */,
+				755DE3612BF9917100E58DCB /* CollaborationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,7 +236,6 @@
 			children = (
 				85C712252BF6A185004353CB /* AirQualityPageVC.swift */,
 				85C712272BF6A198004353CB /* AirQualityPageVM.swift */,
-				596F94452BF9463A0092F51C /* AirQualityPageModel.swift */,
 				596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */,
 			);
 			path = AirQualityPage;
@@ -207,7 +246,6 @@
 			children = (
 				85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */,
 				85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */,
-				CC36A8532BF955B500A41451 /* ForecastModel.swift */,
 			);
 			path = WeatherPage;
 			sourceTree = "<group>";
@@ -226,7 +264,6 @@
 			children = (
 				85C712342BF6A232004353CB /* SolarResourcePageVM.swift */,
 				85C712362BF6A248004353CB /* SolarResourcePageVC.swift */,
-				CB5CB9C52BF97082008AACE4 /* SolarResourceModel.swift */,
 			);
 			path = "Solar Resource Page";
 			sourceTree = "<group>";
@@ -282,8 +319,12 @@
 		85C712A02BF82310004353CB /* ProjectModels */ = {
 			isa = PBXGroup;
 			children = (
+				85C712AA2BF9864B004353CB /* Solar */,
+				85C712A92BF9863F004353CB /* Weather */,
+				85C712A82BF9862E004353CB /* AirQuality */,
 				75AD62FC2BF8DBCD009D1BCA /* Population */,
 				85C712A32BF823BD004353CB /* Specie */,
+				755DE36A2BF9926D00E58DCB /* TestModel */,
 			);
 			path = ProjectModels;
 			sourceTree = "<group>";
@@ -298,9 +339,51 @@
 			path = Specie;
 			sourceTree = "<group>";
 		};
+		85C712A82BF9862E004353CB /* AirQuality */ = {
+			isa = PBXGroup;
+			children = (
+				596F94452BF9463A0092F51C /* AirQualityPageModel.swift */,
+			);
+			path = AirQuality;
+			sourceTree = "<group>";
+		};
+		85C712A92BF9863F004353CB /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				CC36A8532BF955B500A41451 /* ForecastModel.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		85C712AA2BF9864B004353CB /* Solar */ = {
+			isa = PBXGroup;
+			children = (
+				CB5CB9C52BF97082008AACE4 /* SolarResourceModel.swift */,
+			);
+			path = Solar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		755DE3602BF9917100E58DCB /* CollaborationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 755DE3692BF9917100E58DCB /* Build configuration list for PBXNativeTarget "CollaborationTests" */;
+			buildPhases = (
+				755DE35D2BF9917100E58DCB /* Sources */,
+				755DE35E2BF9917100E58DCB /* Frameworks */,
+				755DE35F2BF9917100E58DCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				755DE3662BF9917100E58DCB /* PBXTargetDependency */,
+			);
+			name = CollaborationTests;
+			productName = CollaborationTests;
+			productReference = 755DE3612BF9917100E58DCB /* CollaborationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		85C712072BF6A067004353CB /* Collaboration1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C7121C2BF6A069004353CB /* Build configuration list for PBXNativeTarget "Collaboration1" */;
@@ -333,6 +416,10 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					755DE3602BF9917100E58DCB = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 85C712072BF6A067004353CB;
+					};
 					85C712072BF6A067004353CB = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -356,11 +443,19 @@
 			projectRoot = "";
 			targets = (
 				85C712072BF6A067004353CB /* Collaboration1 */,
+				755DE3602BF9917100E58DCB /* CollaborationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		755DE35F2BF9917100E58DCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85C712062BF6A067004353CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +470,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		755DE35D2BF9917100E58DCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755DE3642BF9917100E58DCB /* CollaborationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85C712042BF6A067004353CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +496,7 @@
 				85C7122B2BF6A1D6004353CB /* WeatherPageVC.swift in Sources */,
 				85C7122D2BF6A1E0004353CB /* WeatherPageVM.swift in Sources */,
 				85C712322BF6A216004353CB /* SpeciePageVM.swift in Sources */,
+				755DE36E2BF9934E00E58DCB /* MockURLProtocol.swift in Sources */,
 				596F94462BF9463A0092F51C /* AirQualityPageModel.swift in Sources */,
 				85C712372BF6A248004353CB /* SolarResourcePageVC.swift in Sources */,
 				596F94482BF9464E0092F51C /* AirQualityPageVCextension.swift in Sources */,
@@ -413,6 +517,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		755DE3662BF9917100E58DCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85C712072BF6A067004353CB /* Collaboration1 */;
+			targetProxy = 755DE3652BF9917100E58DCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		85C712162BF6A069004353CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -425,6 +537,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		755DE3672BF9917100E58DCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3MLTNZ9ZCU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ge.academy.CollaborationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Collaboration1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Collaboration1";
+			};
+			name = Debug;
+		};
+		755DE3682BF9917100E58DCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3MLTNZ9ZCU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ge.academy.CollaborationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Collaboration1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Collaboration1";
+			};
+			name = Release;
+		};
 		85C7121A2BF6A069004353CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -601,6 +749,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		755DE3692BF9917100E58DCB /* Build configuration list for PBXNativeTarget "CollaborationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				755DE3672BF9917100E58DCB /* Debug */,
+				755DE3682BF9917100E58DCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		85C712032BF6A067004353CB /* Build configuration list for PBXProject "Collaboration1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

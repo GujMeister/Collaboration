@@ -26,9 +26,12 @@ final class SpecieDetailsVM {
     }
     
     var onSpeciesInfoUpdate: (([NaturalistInfo.Taxon]) -> Void)?
+    var onFetchingData: (() -> Void)?
+    var onDataFetched: (() -> Void)?
     
     
     func fetchCityID(with passedCountry: String) {
+        onFetchingData?()
         WebService().fetchData(from: "https://api.inaturalist.org/v1/places/autocomplete?q=\(passedCountry)", resultType: CityIDModel.self) { result in
             switch result {
             case .success(let cityIDModel):
@@ -36,6 +39,7 @@ final class SpecieDetailsVM {
                 print("City ID: \(self.cityID ?? 0)")
             case .failure(let error):
                 print("Error fetching city ID: \(error)")
+                self.onDataFetched?()
             }
         }
     }

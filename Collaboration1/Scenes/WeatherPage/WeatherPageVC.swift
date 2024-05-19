@@ -142,6 +142,14 @@ final class WeatherPageVC: UIViewController {
             }
         }
         
+        viewModel.onFailure = { [weak self] error in
+            guard let self = self, let error = error else { return }
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "🚨", message: "ინტერნეტში ამ ქალაქზე ინფორმაცია ვერ მოიძებნა", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "კაი", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     // MARK: - UI Setup

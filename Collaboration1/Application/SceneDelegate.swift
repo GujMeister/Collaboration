@@ -37,10 +37,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let items = tabBarController.tabBar.items {
             let yellowColor = UIColor(hex: "#FDEA00")
-            let grayColor = UIColor.systemGray4
+            let whiteColor = UIColor.white
             
             if #available(iOS 15.0, *) {
-                let configuration = UIImage.SymbolConfiguration(paletteColors: [grayColor, yellowColor])
+                let configuration = UIImage.SymbolConfiguration(paletteColors: [whiteColor, yellowColor])
                 let multicolorImage = UIImage(systemName: "cloud.sun.fill", withConfiguration: configuration)
                 let grayImage = UIImage(systemName: "cloud.sun.fill")?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)
                 
