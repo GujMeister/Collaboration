@@ -11,6 +11,14 @@ final class SpecieDetailsVC: UIViewController {
     // MARK: - Properties
     let viewModel = SpecieDetailsVM()
     private var dataSource: UICollectionViewDiffableDataSource<Int, NaturalistInfo.Taxon>!
+    
+    // Add activity indicator
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
@@ -48,10 +56,15 @@ final class SpecieDetailsVC: UIViewController {
     // MARK: - Setup UI
     private func setupUI() {
         view.addSubview(collectionView)
+        view.addSubview(activityIndicator)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -63,7 +76,11 @@ final class SpecieDetailsVC: UIViewController {
     private func setupBindings() {
         viewModel.onSpeciesInfoUpdate = { [weak self] species in
             self?.updateSnapshot(with: species)
+            DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
+            }
         }
+        activityIndicator.startAnimating()
     }
 }
 

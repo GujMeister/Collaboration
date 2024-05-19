@@ -196,7 +196,6 @@
 			children = (
 				85C712252BF6A185004353CB /* AirQualityPageVC.swift */,
 				85C712272BF6A198004353CB /* AirQualityPageVM.swift */,
-				596F94452BF9463A0092F51C /* AirQualityPageModel.swift */,
 				596F94472BF9464E0092F51C /* AirQualityPageVCextension.swift */,
 			);
 			path = AirQualityPage;
@@ -207,7 +206,6 @@
 			children = (
 				85C7122A2BF6A1D6004353CB /* WeatherPageVC.swift */,
 				85C7122C2BF6A1E0004353CB /* WeatherPageVM.swift */,
-				CC36A8532BF955B500A41451 /* ForecastModel.swift */,
 			);
 			path = WeatherPage;
 			sourceTree = "<group>";
@@ -226,7 +224,6 @@
 			children = (
 				85C712342BF6A232004353CB /* SolarResourcePageVM.swift */,
 				85C712362BF6A248004353CB /* SolarResourcePageVC.swift */,
-				CB5CB9C52BF97082008AACE4 /* SolarResourceModel.swift */,
 			);
 			path = "Solar Resource Page";
 			sourceTree = "<group>";
@@ -282,6 +279,9 @@
 		85C712A02BF82310004353CB /* ProjectModels */ = {
 			isa = PBXGroup;
 			children = (
+				85C712AA2BF9864B004353CB /* Solar */,
+				85C712A92BF9863F004353CB /* Weather */,
+				85C712A82BF9862E004353CB /* AirQuality */,
 				75AD62FC2BF8DBCD009D1BCA /* Population */,
 				85C712A32BF823BD004353CB /* Specie */,
 			);
@@ -296,6 +296,30 @@
 				85C712A62BF823E7004353CB /* CityIDModel.swift */,
 			);
 			path = Specie;
+			sourceTree = "<group>";
+		};
+		85C712A82BF9862E004353CB /* AirQuality */ = {
+			isa = PBXGroup;
+			children = (
+				596F94452BF9463A0092F51C /* AirQualityPageModel.swift */,
+			);
+			path = AirQuality;
+			sourceTree = "<group>";
+		};
+		85C712A92BF9863F004353CB /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				CC36A8532BF955B500A41451 /* ForecastModel.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		85C712AA2BF9864B004353CB /* Solar */ = {
+			isa = PBXGroup;
+			children = (
+				CB5CB9C52BF97082008AACE4 /* SolarResourceModel.swift */,
+			);
+			path = Solar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
